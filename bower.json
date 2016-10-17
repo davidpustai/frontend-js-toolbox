@@ -1,0 +1,16 @@
+{
+	"name": "frontender-toolbox",
+	"description": "Bunch of my frequently used chunks of code for front-end.",
+	"license": "MIT",
+	"authors": [
+		"David Pustai"
+	],
+	"homepage": "https://github.com/davidpustai/frontender-toolbox",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:davidpustai/frontender-toolbox.git"
+	},
+	"dependencies": {
+		"matchmedia": "~0.3.0"
+	}
+}
