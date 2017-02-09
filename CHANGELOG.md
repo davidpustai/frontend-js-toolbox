@@ -4,6 +4,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log follows standards by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+### Fixed
+- tabCycle: include more focusable elements, exclude elements with `[tabindex="-1"]`
+
+### Changed
+- tabCycle: simplify code
 
 
 ## [0.1.0] - 2016-10-17

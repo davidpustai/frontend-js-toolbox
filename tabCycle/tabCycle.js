@@ -1,26 +1,21 @@
 /*
- * Cycle tab focus in one element.
+ * Cycle focus (pressing tab) inside `$element`.
  */
 function tabCycleOn( $element ) {
-	// focus cycle
-	var $focusable = $('input, button, a, [tabindex]', $element),
-		focusableLast = $focusable.last().get(0),
-		focusableFirst = $focusable.first().get(0);
+	var focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]'; // all focusable elements (https://classroom.udacity.com/courses/ud891/lessons/7962031279/concepts/79621414230923)
 
 	$element.on('keydown', function(e) {
-		if ( e.keyCode == 9 ) { // Tab
-			// DOM can be updated, check new elements every time
-			$focusable = $('input:not([type="hidden"]), button, a, [tabindex]', $element);
-			focusableLast = $focusable.last().get(0);
-			focusableFirst = $focusable.first().get(0);
+		if ( e.keyCode === 9 ) { // Tab
+			// DOM could be updated, check new elements every time
+			var $focusable = $(focusableSelector, $element).filter(':not([tabindex="-1"])');
 
 			// last -> first
-			if ( e.target == focusableLast && ! e.shiftKey ) {
+			if ( e.target == $focusable.last().get(0) && ! e.shiftKey ) {
 				e.preventDefault();
 				$focusable.first().focus();
 			}
 			// first -> last
-			else if ( e.target == focusableFirst && e.shiftKey ) {
+			else if ( e.target == focusableFirst.first().get(0) && e.shiftKey ) {
 				e.preventDefault();
 				$focusable.last().focus();
 			}
