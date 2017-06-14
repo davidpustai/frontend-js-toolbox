@@ -1,0 +1,15 @@
+.js-revealing {
+	display: none;
+
+	&.is-focusable {
+		display: block;
+		// transform: translateY(-100%);
+		// transition: top;
+		// ...
+	}
+
+	&.is-revealed {
+		// transform: translateY(0);
+		// ...
+	}
+}
