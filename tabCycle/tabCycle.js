@@ -15,7 +15,7 @@ function tabCycleOn( $element ) {
 				$focusable.first().focus();
 			}
 			// first -> last
-			else if ( e.target == focusableFirst.first().get(0) && e.shiftKey ) {
+			else if ( e.target == $focusable.first().get(0) && e.shiftKey ) {
 				e.preventDefault();
 				$focusable.last().focus();
 			}
